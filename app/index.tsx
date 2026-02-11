@@ -4,9 +4,10 @@ import { Image, ImageBackground, StyleSheet, useWindowDimensions } from 'react-n
 
 const Page = () => {
   const { width, height } = useWindowDimensions()
+  const houseHeight = height * 0.46
   return (
     <>
-      <Canvas style={styles.canvas}>
+      <Canvas style={{ width: width, height: height }}>
         <Rect x={0} y={0} width={width} height={height} >
           <LinearGradient
             start={vec(0, 0)}
@@ -17,14 +18,13 @@ const Page = () => {
       </Canvas>
       <ImageBackground
         source={require('@/assets/images/background.png')}
-        style={styles.background}
+        style={[styles.background, { ...StyleSheet.absoluteFillObject }]}
       >
-
-          <Image source={require('@/assets/images/house.png')}
-            style={[styles.house, { width, height: width }]} />
+        <Image source={require('@/assets/images/house.png')}
+          style={[styles.house, { width, height: houseHeight, top: height * 0.36 }]} />
 
       </ImageBackground>
-    </> 
+    </>
   )
 }
 
@@ -39,6 +39,6 @@ const styles = StyleSheet.create({
   },
   house: {
     ...StyleSheet.absoluteFillObject,
-    top: '36%',
-  },
+    top: 'auto'
+  }
 })
