@@ -1,11 +1,16 @@
+import { Canvas, Circle } from '@shopify/react-native-skia'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 
-const CircleButton = () => {
+type CircleButtonProps = {
+  radius: number
+}
+
+const CircleButton = ({ radius }: CircleButtonProps) => {
   return (
-    <View>
-      <Text>CircleButton</Text>
-    </View>
+    <Canvas>
+      <Circle cx={radius} cy={radius} r={radius} color="red" />
+    </Canvas>
   )
 }
 

@@ -13,8 +13,8 @@ const TabbarItems = () => {
     return (
         <View style={styles.container}>
             <Map />
-            <Trapezoid width={TrapezoidWidth} height={TrapezoidHeight}/>
-            <CircleButton />
+            <Trapezoid width={TrapezoidWidth} height={TrapezoidHeight} />
+            <CircleButton radius={circleRadius} />
             <List />
         </View>
     )

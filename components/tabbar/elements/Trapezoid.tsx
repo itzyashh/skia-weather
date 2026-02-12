@@ -1,11 +1,14 @@
 import { Canvas, FitBox, LinearGradient, Path, rect, vec } from '@shopify/react-native-skia'
 import React from 'react'
-import { StyleSheet, useWindowDimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
 
-const Trapezoid = () => {
-    const { height, width } = useWindowDimensions()
-    const TrapezoidHeight = height * 0.12
-    const TrapezoidWidth = width * 0.68
+type TrapezoidProps = {
+  width: number
+  height: number
+}
+
+const Trapezoid = ({ width: TrapezoidWidth, height: TrapezoidHeight }: TrapezoidProps) => {
+
   return (
     <Canvas style={{width: TrapezoidWidth, height: TrapezoidHeight}}>
         <FitBox src={rect(0, 0, 266, 100)} dst={rect(0, 0, TrapezoidWidth, TrapezoidHeight)}>
