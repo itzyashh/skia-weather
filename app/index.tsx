@@ -1,4 +1,5 @@
 import HomeBackground from '@/components/HomeBackground'
+import ForecastSheet from '@/components/sheets/ForecastSheet'
 import WeatherTabBar from '@/components/tabbar/WeatherTabBar'
 import Weather from '@/components/Weather'
 import React from 'react'
@@ -12,6 +13,7 @@ const Page = () => {
       <GestureHandlerRootView style={{ flex: 1 }}>
         <HomeBackground /> 
         <Weather />
+        <ForecastSheet />
         <WeatherTabBar />
       </GestureHandlerRootView>
     </SafeAreaProvider>
